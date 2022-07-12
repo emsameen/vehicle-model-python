@@ -34,6 +34,7 @@ from sdv_model.Body.Mirrors import Mirrors
 from sdv_model.Body.Raindetection import Raindetection
 from sdv_model.Body.Trunk import Trunk
 from sdv_model.Body.Windshield import Windshield
+from sdv_model.Body.TrunkService import TrunkService
 
 
 class Body(Model):
@@ -90,3 +91,4 @@ class Body(Model):
         self.Lights = Lights(self)
         self.Mirrors = ModelCollection[Mirrors]([Dictionary(["Left", "Right"])], Mirrors(self))
         self.RearMainSpoilerPosition = DataPointFloat("RearMainSpoilerPosition", self)
+        self.TrunkService = TrunkService()
